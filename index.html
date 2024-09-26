@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Recebimento</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Recebimento</h1>
+        <div class="data-hora" id="data-hora"></div>
+
+        <h2>Mercadorias Recebidas</h2>
+        <input type="text" id="search" onkeyup="filtrarMercadorias()" placeholder="Buscar por mercadorias..." />
+        <div id="mercadorias-recebidas"></div>
+
+        <button onclick="toggleForm()">Adicionar/Alterar Status de Mercadoria</button>
+        <div class="form-container" id="form-container">
+            <h2>Adicionar ou Alterar Status</h2>
+            <input type="password" id="senha" placeholder="Senha de Acesso" />
+            <select id="mercadoria-select" onchange="atualizarCampos()">
+                <option value="">Selecionar Mercadoria</option>
+            </select>
+            <input type="text" id="fornecedor" placeholder="Nome do Fornecedor" />
+            <input type="text" id="codigo-produto" placeholder="Código do Produto" />
+            <input type="text" id="descricao" placeholder="Descrição" />
+            <input type="number" id="quantidade" placeholder="Quantidade" />
+            <select id="status">
+                <option value="pendente">Pendente</option>
+                <option value="em andamento">Em Andamento</option>
+                <option value="concluido">Concluído</option>
+            </select>
+            <button onclick="adicionarOuAlterarMercadoria()">Adicionar/Alterar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o JavaScript -->
+</body>
+</html>
